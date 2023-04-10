@@ -1,4 +1,5 @@
 <?php
+    include('config/app.php');
     include_once('controllers/AuthenticationController.php');
 
     $data = $authenticated->authDetail();

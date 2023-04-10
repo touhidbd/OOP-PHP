@@ -28,7 +28,7 @@
                         <button class="btn border dropdown-toggle" type="button" data-bs-toggle="dropdown"><em>Hey, </em><?= $_SESSION['auth_user']['user_fname'].' '.$_SESSION['auth_user']['user_lname']; ?></button>
                         <ul class="dropdown-menu dropdown-menu-end">
                             <li><a class="dropdown-item" href="<?php base_url('profile.php'); ?>">Profile</a></li>
-                            <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                            <li><a class="dropdown-item" href="<?php base_url('admin'); ?>">Dashboard</a></li>
                             <li>
                                 <form action="" method="POST">
                                     <button type="submit" name="btn_logout" class="dropdown-item">Logout</button>

@@ -1,3 +1,7 @@
+<?php 
+    include('codes/authentication_code.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

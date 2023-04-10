@@ -1,5 +1,4 @@
 <?php
-include('config/app.php');
 
 class AuthenticationController
 {
@@ -34,8 +33,22 @@ class AuthenticationController
                 return $data;
             } else {
                 redirect("Somthing went wrong!", "login.php");
+                return false;
             }
         } else {
+            return false;
+        }
+    }
+
+    public function admin()
+    {
+        $user_id = $_SESSION['auth_user']['user_id'];
+        $checkAdmin = "SELECT id,role_as FROM users WHERE id='$user_id' AND role_as='1' LIMIT 1";
+        $result = $this->conn->query($checkAdmin);
+        if ($result->num_rows == 1) {
+            return true;
+        } else {
+            redirect("You are not authorized as admin!", "index.php");
             return false;
         }
     }
