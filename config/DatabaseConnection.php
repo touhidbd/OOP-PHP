@@ -9,10 +9,7 @@ class DatabaseConnection
         if($conn->connect_error)
         {
             die('<h2>Database Connection Failed!</h2>');
-        } 
-        // echo 'Database connected successfully!';
+        }
         return $this->conn = $conn;
     }
 }
-
-?>

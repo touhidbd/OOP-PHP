@@ -1,5 +1,4 @@
 <?php
-    include('config/app.php');
     include_once('controllers/RegisterController.php');
     include_once('controllers/LoginController.php');
 

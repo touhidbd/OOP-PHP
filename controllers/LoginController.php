@@ -8,18 +8,15 @@ class LoginController
         $this->conn = $db->conn;
     }
 
-    public function userLogin($email,$password)
+    public function userLogin($email, $password)
     {
         $checkLogin = "SELECT * FROM users WHERE email='$email' AND password='$password' LIMIT 1";
         $result = $this->conn->query($checkLogin);
-        if($result->num_rows > 0)
-        {
+        if ($result->num_rows > 0) {
             $data = $result->fetch_assoc();
             $this->userAuthentication($data);
             return true;
-        }
-        else
-        {
+        } else {
             return false;
         }
     }
@@ -38,7 +35,7 @@ class LoginController
 
     public function isLoggedIn()
     {
-        if(isset($_SESSION['authenticated']) === true) {
+        if (isset($_SESSION['authenticated']) === true) {
             redirect("You are already logged in!", "index.php");
         } else {
             return false;
@@ -47,7 +44,7 @@ class LoginController
 
     public function logout()
     {
-        if(isset($_SESSION['authenticated']) === true) {
+        if (isset($_SESSION['authenticated']) === true) {
             unset($_SESSION['authenticated']);
             unset($_SESSION['auth_user']);
             return true;

@@ -10,7 +10,7 @@ define('SITE_URL', 'http://localhost/php-oop/');
 
 include_once('DatabaseConnection.php');
 $db = new DatabaseConnection;
-
+include('codes/authentication_code.php');
 
 // Basic Functions
 function base_url($slug)

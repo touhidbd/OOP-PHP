@@ -1,7 +1,7 @@
 <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
     <div class="container">
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-            <a href="" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+            <a href="<?php base_url('index.php'); ?>" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
                 <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
                 <svg  class="bi me-2" xmlns="http://www.w3.org/2000/svg" style="display: none;">
                     <symbol id="bootstrap" viewBox="0 0 118 94">
@@ -27,7 +27,7 @@
                     <div class="dropdown">
                         <button class="btn border dropdown-toggle" type="button" data-bs-toggle="dropdown"><em>Hey, </em><?= $_SESSION['auth_user']['user_fname'].' '.$_SESSION['auth_user']['user_lname']; ?></button>
                         <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="<?php base_url('profile.php'); ?>">Profile</a></li>
                             <li><a class="dropdown-item" href="#">Dashboard</a></li>
                             <li>
                                 <form action="" method="POST">
