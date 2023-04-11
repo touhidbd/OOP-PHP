@@ -22,7 +22,11 @@
         $checkLogin = $auth->userLogin($email,$password);
         if($checkLogin)
         {
-            redirect("Logged in successfully!", "index.php");
+            if($_SESSION['auth_role'] == '1') {
+                redirect("Logged in successfully!", "admin/");
+            } else {
+                redirect("Logged in successfully!", "index.php");
+            }            
         }
         else {
             redirect("Invaild email or password!", "login.php");
