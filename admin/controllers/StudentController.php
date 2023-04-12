@@ -63,4 +63,17 @@ class StudentController
             return false;
         }
     }
+
+    public function delete($id)
+    {
+        $student_id =  validateInput($this->conn, $id);        
+        
+        $studentQuery = "DELETE FROM students WHERE id='$student_id' LIMIT 1";
+        $result = $this->conn->query($studentQuery);
+        if($result) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

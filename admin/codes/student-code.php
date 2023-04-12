@@ -39,4 +39,18 @@
         }
     }
 
+
+    if(isset($_POST['delete_student']))
+    {
+        $id = validateInput($db->conn,$_POST['delete_student']);
+
+        $student = new StudentController;
+        $result = $student->delete($id);
+        if($result) {
+            redirect("Student deleted successfully!", "admin/students.php");
+        } else {
+            redirect("Something went wrong!", "admin/student-edit.php?id=".$id);
+        }
+    }
+
 ?>

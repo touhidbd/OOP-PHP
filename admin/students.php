@@ -25,6 +25,8 @@
                                     <div class="card-header">
                                         <i class="fas fa-table me-1"></i>
                                         Students List
+
+                                        <a href="<?= base_url('admin/add-student.php'); ?>" class="btn btn-sm btn-primary float-end">Add Student</a>
                                     </div>
                                     <div class="card-body">
                                         <table id="datatablesSimple">
@@ -54,7 +56,9 @@
                                                                     <td>
                                                                         <a href="<?= base_url('admin/student-edit.php'); ?>?id=<?= $row['id']; ?>" class="btn btn-sm btn-success"><i class="fa-regular fa-pen-to-square"></i></a>
                                                                         <a href="<?= base_url('admin/student-view.php'); ?>?id=<?= $row['id']; ?>" class="btn btn-sm btn-warning text-white"><i class="fa-regular fa-eye"></i></a>
-                                                                        <a href="<?= base_url('admin/student-delete.php'); ?>?id=<?= $row['id']; ?>" class="btn btn-sm btn-danger"><i class="fa-regular fa-trash-can"></i></a>
+                                                                        <form action="codes/student-code.php" method="POST" class="d-inline">
+                                                                            <button name="delete_student" value="<?= $row['id']; ?>" class="btn btn-sm btn-danger"><i class="fa-regular fa-trash-can"></i></button>
+                                                                        </form>
                                                                     </td>
                                                                 </tr>
                                                             <?php
