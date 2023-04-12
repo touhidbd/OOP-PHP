@@ -76,4 +76,18 @@ class StudentController
             return false;
         }
     }
+
+    public function view($id)
+    {
+        $student_id =  validateInput($this->conn, $_GET['id']);
+        $studentQuery = "SELECT * FROM students WHERE id='$student_id' LIMIT 1";
+        $result = $this->conn->query($studentQuery);
+
+        if($result->num_rows == 1) {
+            $data = $result->fetch_assoc();
+            return $data;
+        } else {
+            return false;
+        }
+    }
 }
